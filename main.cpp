@@ -614,7 +614,7 @@ int main(int argc, char* argv[]) {
             if ((((pMAC2.arpHeader.SenderIP[0]) == (ipaddrs[cnt][0])) && ((pMAC2.arpHeader.SenderIP[1]) == (ipaddrs[cnt][1])) && ((pMAC2.arpHeader.SenderIP[2]) == (ipaddrs[cnt][2])) && ((pMAC2.arpHeader.SenderIP[3]) == (ipaddrs[cnt][3]))) && ((((pMAC2.srcMACAddr[0] == macaddrs[cnt][0]) && (pMAC2.srcMACAddr[1] == macaddrs[cnt][1]) && (pMAC2.srcMACAddr[2] == macaddrs[cnt][2]) && (pMAC2.srcMACAddr[3] == macaddrs[cnt][3]) && (pMAC2.srcMACAddr[4] == macaddrs[cnt][4]) && (pMAC2.srcMACAddr[5] == macaddrs[cnt][5])) || ((pMAC2.srcMACAddr[0] & 0x02))) && (sockAddrghx.sll_protocol == htons(ETH_P_ARP)) && (nomeflag == false || ((*(unsigned int*)&myinterfaceip) != (*(unsigned int*)&pMAC2.arpHeader.SenderIP))))){
                 macbindtimed[cnt] = time(NULL);
                 memcpy(pMAC.arpHeader.SenderIP, pMAC2.arpHeader.TargetIP, sizeof(in_addr_t));
-                memcpy(pMAC.srcMACAddr, pMAC.destMACAddr, sizeof(pMAC.srcMACAddr));
+                //memcpy(pMAC.srcMACAddr, pMAC.destMACAddr, sizeof(pMAC.srcMACAddr));
                 memcpy(pMAC.arpHeader.SenderMAC, pMAC.arpHeader.TargetMAC, sizeof(pMAC.arpHeader.SenderMAC));
                 memcpy(pMAC.destMACAddr, pMAC2.srcMACAddr, sizeof(pMAC.destMACAddr));
                 memcpy(pMAC.arpHeader.TargetMAC, pMAC2.arpHeader.SenderMAC, sizeof(pMAC.arpHeader.TargetMAC));
